@@ -1,10 +1,43 @@
+//- doctype html
+//- html(lang="en")
+//-   head
+//-     title= title
+//-     link(rel='stylesheet', href='/stylesheet.css')
+
+//-     meta(charset='utf-8')
+//-     meta(name='viewport' content='width=device-width, initial-scale=1')
+
+//-   body
+//-     header(class="main-header")
+//-       h1 MembersOnly
+//-       nav
+//-         a(href="/sign-in")  Sign In
+//-         a(href="/sign-up")  Sign Up
+//-     block content
+
 doctype html
 html(lang="en")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheet.css')
+
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
   body
+    header(class="main-header")
+      h1 MembersOnly
+      nav(class="nav-list")
+        ul
+          li
+            a(href="/sign-in") Sign In
+          li
+            a(href="/sign-up") Sign Up
+      button(class="menu-button", onclick="toggleMenu()") Menu
     block content
+
+script.
+  function toggleMenu() {
+    var navList = document.querySelector(".nav-list");
+    navList.classList.toggle("show");
+  }
