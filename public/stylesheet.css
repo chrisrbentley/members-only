@@ -1,0 +1,140 @@
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.main-header > nav > a {
+	background-color: rgb(255, 0, 140);
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	margin: 10px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	text-decoration: none;
+}
+
+.main-header > nav > a:hover {
+	background-color: rgb(203, 0, 112);
+}
+
+h1 {
+	color: rgb(255, 0, 140);
+}
+
+heading > h2 {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.sign-up-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 10px;
+	box-shadow: 3px 3px rgb(200, 199, 199);
+}
+
+.sign-up {
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+	margin: 25px;
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sign-up > h2 {
+	align-self: center;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+}
+
+.sign-up > div > input {
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.sign-up > button {
+	width: 40%;
+	margin-top: 10px;
+	padding: 5px;
+	align-self: center;
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(255, 0, 140);
+	color: #fff;
+	padding: 10px;
+}
+
+@media (max-width: 768px) {
+	.menu-button {
+		display: block;
+		padding: 10px;
+		background-color: rgb(255, 0, 140);
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+	}
+
+	.nav-list {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+		position: absolute;
+		top: 80px;
+		right: 0;
+		background-color: #f5f5f5;
+		width: 100%;
+		flex-direction: column;
+		padding: 0;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.show {
+		max-height: 500px;
+	}
+
+	.nav-list > ul {
+		padding: 0;
+	}
+
+	.nav-list > ul > li {
+		margin: 0;
+		padding: 10px;
+		border-bottom: 1px solid #ddd; /* Light gray separating line */
+		list-style: none;
+	}
+
+	.nav-list > ul > li > a {
+		color: rgb(255, 0, 140);
+		text-decoration: none;
+		font-size: 24px;
+	}
+
+	.nav-list li:last-child {
+		border-bottom: none; /* Remove border from last item */
+	}
+}
+
+.error-message {
+	color: red;
+	padding: 3px;
+}

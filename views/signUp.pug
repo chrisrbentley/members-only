@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  
 
   main(class="sign-up-container")
     form(action="" method="POST" class="sign-up")
@@ -9,13 +8,21 @@ block content
       div(class="field")
         label(for="name") Name
         input(type="text" name="name" id="name" minlength="3" maxlength="20" required)
+        if errors && errors.name
+          span.error-message= errors.name.msg
       div(class="field")
         label(for="username") Username
         input(type="text" name="username" id="username" minlength="1" maxlength="20" required)
+        if errors && errors.username
+          span.error-message= errors.username.msg
       div(class="field")
         label(for="password") Password
-        input(type="password" name="password" id="password" minlength="4" maxlength="20" required)
+        input(type="password" name="password" id="password" minlength="4" maxlength="80" required)
+        if errors && errors.password
+          span.error-message= errors.password.msg
       div(class="field")
         label(for="confirmPassword") Confirm Password
         input(type="password" name="confirmPassword" id="confirmPassword" required)
+        if errors && errors.confirmPassword
+          span.error-message= errors.confirmPassword.msg
       button(type="submit") Sign Up

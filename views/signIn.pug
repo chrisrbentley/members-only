@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  main(class="sign-up-container")
+    form(action="/sign-in" method="POST" class="sign-up")
+      h2 Sign in to your account
+      div(class="field")
+        label(for="username") Username
+        input(type="text" name="username" id="username" minlength="1" maxlength="20" required)
+        if message && message === 'Incorrect username'
+          span.error-message= message
+      div(class="field")
+        label(for="password") Password
+        input(type="password" name="password" id="password" minlength="4" maxlength="80" required)
+        if message && message === 'Incorrect password'
+          span.error-message= message
+
+      
+      button(type="submit") Log in
