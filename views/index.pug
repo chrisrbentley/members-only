@@ -4,5 +4,7 @@ block content
   
 
   h1 index
-  if user
-    p Hello, #{user.username}!
+  if currentUser
+    p Hello, #{currentUser.username}!
+    a(href="/new-message") New Message
+  

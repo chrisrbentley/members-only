@@ -1,5 +1,6 @@
 import 'dotenv/config.js';
-import createError from 'https';
+// import createError from 'http';
+import createError from 'http-errors';
 import express from 'express';
 import mongoose from 'mongoose';
 import session from 'express-session';
@@ -7,11 +8,7 @@ import passport from 'passport';
 import localStrategy from 'passport-local';
 import User from './models/user.js';
 import bcrypt from 'bcryptjs';
-
-import indexRouter from './routes/index.js';
-import signUpRouter from './routes/signUp.js';
-import signInRouter from './routes/signIn.js';
-import logoutRouter from './routes/logout.js';
+import routes from './routes/routes.js';
 
 const app = express();
 const LocalStrategy = localStrategy.Strategy;
@@ -42,17 +39,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
 
 app.use(function (req, res, next) {
 	res.locals.currentUser = req.user;
 	next();
 });
 
-app.use('/', indexRouter);
-app.use('/', signUpRouter);
-app.use('/', signInRouter);
-app.use('/', logoutRouter);
+app.use('/', routes);
 
 app.use(express.static('public'));
 

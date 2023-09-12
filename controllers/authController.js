@@ -72,6 +72,21 @@ export const onSignUp = [
 	}),
 ];
 
+export const signInPost = (req, res, next) => {
+	const messages = req.session.messages || [];
+	let message = null;
+
+	if (messages.length > 0) {
+		message = messages[messages.length - 1];
+	}
+
+	req.session.messages = [];
+
+	res.render('signIn.pug', {
+		message: message,
+	});
+};
+
 export const onSignIn = passport.authenticate('local', {
 	successRedirect: '/',
 	failureRedirect: '/sign-in',

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  if currentUser
+    p This is the new message form page
+
+    form(action="" method="POST")
+      div
+        label(for="title") Title
+        input(type="text" name="title" id="title")
+      
+      div
+        label(for="message") Write a message
+        input(type="text" name="message" id="message")
+      
+      button(type="submit") Submit
+  
