@@ -5,9 +5,10 @@ import * as authController from '../controllers/authController.js';
 const router = express.Router();
 
 // index
-router.get('/', (req, res) => {
+/* router.get('/', (req, res) => {
 	res.render('index.pug');
-});
+}); */
+router.get('/', messageController.getMessages);
 
 // messages
 router.get('/new-message', messageController.getMessageForm);

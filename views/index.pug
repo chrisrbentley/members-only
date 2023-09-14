@@ -1,10 +1,32 @@
 extends layout
 
 block content
+    //- a.new-message(href="new-message") Write a new message
   
+    if messages
+      if currentUser
 
-  h1 index
-  if currentUser
-    p Hello, #{currentUser.username}!
-    a(href="/new-message") New Message
-  
+        div.messagesContainer
+          each message in messages
+            article.message
+              div
+                h2= message.title
+                p= message.text
+              div.details
+                p= message.author.username
+                time(datetime=message.timestamp) #{message.formattedDate}
+      else
+        div.messagesContainer
+          each message in messages
+            article.message
+              div
+                h2= message.title
+                p= message.text
+              div
+                p.disclaimer
+                  | Become a 
+                  a.memberLink(href="/sign-up") member
+                  |  to see more details.
+
+    else 
+      p There are no messages.
