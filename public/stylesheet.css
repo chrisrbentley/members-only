@@ -85,6 +85,13 @@ heading > h2 {
 	padding: 10px;
 }
 
+.nav-list {
+	background-color: pink;
+	display: flex;
+	text-decoration: none;
+	list-style-type: none;
+}
+
 @media (max-width: 768px) {
 	.menu-button {
 		display: block;
@@ -208,4 +215,33 @@ article.message .details time {
 
 .memberLink {
 	color: rgb(255, 0, 140);
+}
+
+.message-form-container {
+	/* border: solid 3px black; */
+	display: flex;
+	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+		rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.message-form-container > div {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0.625rem;
+}
+
+.message-form-container > div > input {
+	padding: 0.3125rem;
+	font-size: 16px;
+}
+
+.message-form-container > button {
+	background-color: rgb(255, 0, 140);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 0.625rem;
+	font-size: 16px;
 }

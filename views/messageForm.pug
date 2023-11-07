@@ -2,9 +2,8 @@ extends layout
 
 block content
   if currentUser
-    p This is the new message form page
 
-    form(action="" method="POST")
+    form(action="" method="POST" class="message-form-container")
       div
         label(for="title") Title
         input(type="text" name="title" id="title")
